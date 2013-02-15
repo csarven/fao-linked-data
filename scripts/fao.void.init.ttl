@@ -1,0 +1,144 @@
+prefix void: <http://rdfs.org/ns/void#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix qb: <http://purl.org/linked-data/cube#>
+prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix sd: <http://www.w3.org/ns/sparql-service-description#>
+prefix : <http://fao.270a.info/void.ttl#>
+prefix fao-dataset: <http://fao.270a.info/dataset/>
+prefix fao-graph: <http://fao.270a.info/graph/>
+
+
+CONSTRUCT {
+<http://csarven.ca/#i>
+    rdfs:label "Sarven Capadisli"@en ;
+    .
+
+<http://creativecommons.org/publicdomain/zero/1.0/>
+    rdfs:label "CC0 1.0 Universal"@en ;
+    .
+
+<http://fao.270a.info/void.ttl>
+    a void:DatasetDescription ;
+    dcterms:title "A VoiD Description of the fao.270a.info Dataset"@en ;
+    dcterms:creator <http://csarven.ca/#i> ;
+    foaf:primaryTopic :fao .
+
+
+:fao
+    a void:Dataset ;
+    foaf:homepage <http://fao.270a.info/> ;
+    dcterms:source [ foaf:homepage <http://fao.org/> ] ;
+    dcterms:publisher [ foaf:homepage <http://csarven.ca/> ] ;
+    dcterms:modified "2013-02-10"^^xsd:date ;
+    dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    void:subset
+        :VoID ,
+        ?voidDataset ;
+    void:triples 36900000 ;
+    dcterms:subject
+        <http://dbpedia.org/resource/Statistical_survey> ,
+        <http://dbpedia.org/resource/Finance> ,
+        <http://dbpedia.org/resource/Economics> ,
+        <http://dbpedia.org/resource/Regional_science> ;
+    void:sparqlEndpoint <http://fao.270a.info/sparql> ;
+    void:feature <http://www.w3.org/ns/formats/RDF_XML> ,
+                 <http://www.w3.org/ns/formats/Turtle> ;
+    void:dataDump <http://fao.270a.info/data/data.tar.gz> ;
+    void:dataDump <http://fao.270a.info/data/meta.tar.gz> ;
+    .
+
+
+:VoID
+    a sd:Graph, void:Dataset ;
+    dcterms:title "SD+VoID triples"@en ;
+    void:triples 27674 ;
+    void:dataDump <http://fao.270a.info/void.ttl> ;
+    .
+
+:meta
+    void:dataDump <http://fao.270a.info/data/meta.tar.gz> ;
+    .
+
+?voidDataset
+    a sd:Graph ;
+    void:triples ?dataSetTriples ;
+    dcterms:license ?dataSetLicense ;
+    dcterms:title ?dataSetTitle ;
+    dcterms:identifier ?dataSetIdentifier ;
+    sd:name ?dataSetInGraph ;
+    sd:graph ?voidDataset ;
+    .
+
+:service
+    a sd:Service ;
+    sd:endpoint <http://oecd.270a.info/sparql> ;
+    sd:supportedLanguage sd:SPARQL11Query ;
+    sd:feature sd:UnionDefaultGraph ;
+    sd:defaultDatasetDescription :defaultDatasetDescription ;
+    .
+
+:defaultDatasetDescription
+    a sd:Dataset ;
+    dcterms:title "FAO Linked Data"@en ;
+    dcterms:description "FAO Linked Data"@en ;
+    void:triples 36846312 ;
+
+    sd:defaultGraph :defaultGraph ;
+
+    sd:namedGraph :namedGraphVoID ;
+
+    sd:namedGraph ?voidDataset ;
+    .
+
+:defaultGraph
+    a sd:Graph, void:Dataset ;
+    dcterms:title "FAO Linked Data SPARQL Endpoint Description"@en ;
+    dcterms:description "Contains a copy of this SD+VoID file!"@en ;
+    void:triples 36900000 ;
+    .
+:namedGraphVoID
+    sd:name fao-graph:void ;
+    sd:graph :VoID ;
+    .
+
+?s ?p ?o .
+
+}
+
+WHERE {
+    GRAPH fao-graph:void {
+        ?s ?p ?o .
+        OPTIONAL {
+            ?s a void:Dataset .
+            ?s void:triples ?triples .
+            BIND(?s AS ?voidDataset) .
+            BIND(?triples AS ?dataSetTriples) .
+        }
+    }
+
+    OPTIONAL {
+        GRAPH ?dataSetInGraph {
+            ?s a qb:DataSet .
+            ?s qb:structure ?structure .
+            OPTIONAL {
+                ?structure skos:prefLabel ?dataSetTitle .
+            }
+            OPTIONAL {
+                ?structure sdmx-concept:dsi ?dataSetIdentifier .
+            }
+        }
+    }
+
+    OPTIONAL {
+        ?s a prov:Entity .
+        ?s dcterms:license ?dataSetLicense .
+    }
+}
+
