@@ -7,10 +7,8 @@
 
 . $HOME/lodstats-env/bin/activate
 
-data="/data/fao-linked-data/data/";
-namespace="http://fao.270a.info/";
-tdbAssembler="/usr/lib/fuseki/tdb.fao.ttl";
-JVM_ARGS="-Xmx12000M"
+. ./fao.config.sh
+
 #cd "$data"import
 #rm *stats*
 
@@ -24,5 +22,5 @@ echo Creating "$data"import/meta.nt.stats.ttl ;
 lodstats -val "$data"import/meta.nt > "$data"import/meta.nt.stats.ttl ;
 
 echo "Fixing URI for meta stats" ;
-find "$data"import/*stats.ttl -name "*[!Structure|prov]" | while read i ; do sed -ri 's/<file:\/\/\/data\/fao-linked-data\/data\/import\/([^\.]*)\.nt/<http:\/\/fao.270a.info\/dataset\/\1/g' "$i" ; done ;
+find "$data"import/*stats.ttl -name "*[!Structure|prov]" | while read i ; do sed -ri 's/<file:\/\/\/data\/'"$agency"'-linked-data\/data'"$state"'\/import\/([^\.]*)\.nt/<http:\/\/'"$agency"'.270a.info\/dataset\/\1/g' "$i" ; done ;
 

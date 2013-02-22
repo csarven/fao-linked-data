@@ -5,11 +5,7 @@
 #    Author URI: http://csarven.ca/#i
 #
 
-data="/data/fao-linked-data/data/";
-namespace="http://fao.270a.info/";
-db="/SSD/data/tdb/db/fao/" ;
-tdbAssembler="/usr/lib/fuseki/tdb.fao.ttl";
-JVM_ARGS="-Xmx12000M"
+. ./fao.config.sh
 
 echo "Removing $db";
 rm -rf "$db";
@@ -47,6 +43,9 @@ for DataSetCode in "${DataSetCodes[@]}" ; do java "$JVM_ARGS" tdb.tdbloader -v -
 
 ls -1 "$data"*.rdf | grep -E "DATASTRUCTURE|prov|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done 
 
+
+java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.dbpedia.nt
+java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.eunis.nt
 
 ./fao.tdbstats.sh
 #real    23m30.705s

@@ -5,12 +5,7 @@
 #    Author URI: http://csarven.ca/#i
 #
 
-data="/data/fao-linked-data/data/";
-namespace="http://fao.270a.info/";
-db="/SSD/data/tdb/db/fao/";
-tdbAssembler="/usr/lib/fuseki/tdb.fao.ttl";
-JVM_ARGS="-Xmx12000M"
-void="/var/www/fao.270a.info/void.ttl";
+. ./fao.config.sh
 
 ./fao.drop.graph.void.sh
 

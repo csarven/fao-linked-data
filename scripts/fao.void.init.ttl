@@ -31,17 +31,18 @@ CONSTRUCT {
     foaf:primaryTopic :fao .
 
 
-:fao
+fao-dataset:fao
     a void:Dataset ;
+    dcterms:title "FAO of UN Datasets"@en ;
     foaf:homepage <http://fao.270a.info/> ;
-    dcterms:source [ foaf:homepage <http://fao.org/> ] ;
-    dcterms:publisher [ foaf:homepage <http://csarven.ca/> ] ;
+    dcterms:source <http://fao.org/> ;
+    dcterms:publisher <http://csarven.ca/#i> ;
     dcterms:modified "2013-02-10"^^xsd:date ;
     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
     void:subset
-        :VoID ,
+        fao-dataset:void ,
         ?voidDataset ;
-    void:triples 36900000 ;
+    void:triples 53000000 ;
     dcterms:subject
         <http://dbpedia.org/resource/Statistical_survey> ,
         <http://dbpedia.org/resource/Finance> ,
@@ -55,14 +56,14 @@ CONSTRUCT {
     .
 
 
-:VoID
+fao-dataset:void
     a sd:Graph, void:Dataset ;
     dcterms:title "SD+VoID triples"@en ;
-    void:triples 27674 ;
+    void:triples 2039 ;
     void:dataDump <http://fao.270a.info/void.ttl> ;
     .
 
-:meta
+fao-dataset:meta
     void:dataDump <http://fao.270a.info/data/meta.tar.gz> ;
     .
 
@@ -78,7 +79,7 @@ CONSTRUCT {
 
 :service
     a sd:Service ;
-    sd:endpoint <http://oecd.270a.info/sparql> ;
+    sd:endpoint <http://fao.270a.info/sparql> ;
     sd:supportedLanguage sd:SPARQL11Query ;
     sd:feature sd:UnionDefaultGraph ;
     sd:defaultDatasetDescription :defaultDatasetDescription ;
@@ -88,7 +89,7 @@ CONSTRUCT {
     a sd:Dataset ;
     dcterms:title "FAO Linked Data"@en ;
     dcterms:description "FAO Linked Data"@en ;
-    void:triples 36846312 ;
+    void:triples 52861175 ;
 
     sd:defaultGraph :defaultGraph ;
 
@@ -101,12 +102,36 @@ CONSTRUCT {
     a sd:Graph, void:Dataset ;
     dcterms:title "FAO Linked Data SPARQL Endpoint Description"@en ;
     dcterms:description "Contains a copy of this SD+VoID file!"@en ;
-    void:triples 36900000 ;
+    void:triples 53000000 ;
     .
 :namedGraphVoID
     sd:name fao-graph:void ;
-    sd:graph :VoID ;
+    sd:graph fao-dataset:void ;
     .
+
+:meta_dbpedia
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget :meta ;
+    void:objectsTarget :dbpedia ;
+    void:triples 673 ;
+    .
+:dbpedia
+    rdf:type void:Dataset ;
+    foaf:homepage <http://dbpedia.org/> ;
+    .
+:meta_eunis
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget :meta ;
+    void:objectsTarget :dbpedia ;
+    void:triples 359 ;
+    .
+:eunis
+    rdf:type void:Dataset ;
+    foaf:homepage <http://eunis.eea.europa.eu/> ;
+    .
+
 
 ?s ?p ?o .
 
@@ -141,4 +166,5 @@ WHERE {
         ?s dcterms:license ?dataSetLicense .
     }
 }
+
 

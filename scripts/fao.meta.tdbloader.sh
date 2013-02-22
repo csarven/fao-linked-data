@@ -5,11 +5,7 @@
 #    Author URI: http://csarven.ca/#i
 #
 
-data="/data/fao-linked-data/data/";
-namespace="http://fao.270a.info/";
-graphs="/home/sarcap/Graphs/";
-tdbAssembler="/usr/lib/fuseki/tdb.fao.ttl";
-JVM_ARGS="-Xmx12000M";
+. ./fao.config.sh
 
 #java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/void /var/www/fao.270a.info/void.ttl;
 
