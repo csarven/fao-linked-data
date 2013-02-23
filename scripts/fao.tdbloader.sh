@@ -41,7 +41,7 @@ for DataSetCode in "${DataSetCodes[@]}" ; do java "$JVM_ARGS" tdb.tdbloader -v -
 
 #for DataSetCode in "${DataSetCodes[@]}" ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/"$DataSetCode" "$data""$DataSetCode".rdf ; done
 
-ls -1 "$data"*.rdf | grep -E "DATASTRUCTURE|prov|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done 
+ls -1 "$data"*.rdf | grep -E "DATASTRUCTURE|fao|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done 
 
 
 java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.dbpedia.nt

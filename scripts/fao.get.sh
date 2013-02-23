@@ -12,7 +12,7 @@
 #wget "http://data.fao.org/sdmx/repository/data/TRADE_QUANTITY/all/FAO/?startPeriod=1900&endPeriod=2100&compression=true" -O TRADE_QUANTITY.zip
 #wget "http://data.fao.org/sdmx/repository/data/TRADE_US_DOLLAR/all/FAO/?startPeriod=1900&endPeriod=2100&compression=true" -O TRADE_US_DOLLAR.zip
 
-rm "$data"prov.retrieval.rdf
+rm "$data""$agency".prov.retrieval.rdf
 
 echo '<?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
@@ -21,7 +21,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
     xmlns:dcterms="http://purl.org/dc/terms/"
     xmlns:prov="http://www.w3.org/ns/prov#"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    xmlns:sdmx="http://purl.org/linked-data/sdmx#">' > "$data"prov.retrieval.rdf ;
+    xmlns:sdmx="http://purl.org/linked-data/sdmx#">' > "$data""$agency".prov.retrieval.rdf ;
 
 counter=0;
 while read i ;
@@ -58,7 +58,7 @@ sleep 1
             <prov:generated rdf:resource="http://fao.270a.info/data/'$DataSetCode'.'$version'.xml"/>
             <rdfs:label xml:lang="en">Retrieved '$DataSetCode' '$version'</rdfs:label>
             <rdfs:comment xml:lang="en">'$DataSetCode' '$version' retrieved from source and saved to local filesystem.</rdfs:comment>
-        </rdf:Description>' >> "$data"prov.retrieval.rdf ;
+        </rdf:Description>' >> "$data""$agency".prov.retrieval.rdf ;
 
         (( counter++ ));
 
@@ -110,7 +110,7 @@ sleep 1
                     <prov:generated rdf:resource="http://fao.270a.info/data/'$DataSetCode'.'$datestart'.'$dateend'.xml"/>
                     <rdfs:label xml:lang="en">Retrieved '$DataSetCode'</rdfs:label>
                     <rdfs:comment xml:lang="en">'$DataSetCode' retrieved from source and saved to local filesystem.</rdfs:comment>
-                </rdf:Description>' >> "$data"prov.retrieval.rdf ;
+                </rdf:Description>' >> "$data""$agency".prov.retrieval.rdf ;
 
                 (( counter++ )) ;
             done ;
@@ -151,8 +151,8 @@ sleep 1
             <prov:generated rdf:resource="http://fao.270a.info/data/'$DataSetCode'.xml"/>
             <rdfs:label xml:lang="en">Retrieved '$DataSetCode'</rdfs:label>
             <rdfs:comment xml:lang="en">'$DataSetCode' retrieved from source and saved to local filesystem. Removed duplicate node tree.</rdfs:comment>
-        </rdf:Description>' >> "$data"prov.retrieval.rdf ;
+        </rdf:Description>' >> "$data""$agency".prov.retrieval.rdf ;
     done
 
 
-echo -e "\n</rdf:RDF>" >> "$data"prov.retrieval.rdf ;
+echo -e "\n</rdf:RDF>" >> "$data""$agency".prov.retrieval.rdf ;

@@ -6,9 +6,9 @@
 #
 
 agency="fao";
-state=""; #".staging" or ''
+state=".staging"; #".staging" or ''
 data="/data/$agency-linked-data/data$state/";
-provRetrieval="$data/prov.retrieval.rdf";
+provRetrieval="$data""$agency"".prov.retrieval.rdf";
 xslDocument="/home/sarcap/linked-sdmx/scripts/generic.xsl";
 namespace="http://$agency.270a.info/";
 db="/SSD/data/tdb/db/$agency$state/";
