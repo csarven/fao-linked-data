@@ -1,0 +1,10 @@
+<http://fao.270a.info/dataset/AQUACULTURE_QUANTITY> <http://purl.org/dc/terms/title> "Aquaculture Quantity"@en .
+<http://fao.270a.info/dataset/AQUACULTURE_US_DOLLAR> <http://purl.org/dc/terms/title> "Aquaculture US dollar"@en .
+<http://fao.270a.info/dataset/CAPTURE> <http://purl.org/dc/terms/title> "Capture Fisheries"@en .
+<http://fao.270a.info/dataset/SEATL_CAPTURE> <http://purl.org/dc/terms/title> "Southeast Atlantic Capture Production"@en .
+<http://fao.270a.info/dataset/RECOFI_CAPTURE> <http://purl.org/dc/terms/title> "Regional Commission for Fisheries Capture Production"@en .
+<http://fao.270a.info/dataset/CECAF_CAPTURE> <http://purl.org/dc/terms/title> "Eastern Central Atlantic Capture Production"@en .
+<http://fao.270a.info/dataset/GFCM_CAPTURE> <http://purl.org/dc/terms/title> "Mediterranean and Black Sea Capture Production"@en .
+<http://fao.270a.info/dataset/GLOBAL_PRODUCTION> <http://purl.org/dc/terms/title> "Global Capture Production"@en .
+<http://fao.270a.info/dataset/TRADE_QUANTITY> <http://purl.org/dc/terms/title> "Trade Quantity"@en .
+<http://fao.270a.info/dataset/TRADE_US_DOLLAR> <http://purl.org/dc/terms/title> "Trade US dollar"@en .

@@ -11,9 +11,12 @@ prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#>
 prefix prov: <http://www.w3.org/ns/prov#>
 prefix sd: <http://www.w3.org/ns/sparql-service-description#>
 prefix : <http://fao.270a.info/void.ttl#>
-prefix fao-dataset: <http://fao.270a.info/dataset/>
 prefix fao-graph: <http://fao.270a.info/graph/>
-
+prefix bfs-dataset: <http://bfs.270a.info/dataset/>
+prefix fao-dataset: <http://fao.270a.info/dataset/>
+prefix ecb-dataset: <http://ecb.270a.info/dataset/>
+prefix worldbank-dataset: <http://worldbank.270a.info/dataset/>
+prefix transparency-dataset: <http://transparency.270a.info/dataset/>
 
 CONSTRUCT {
 <http://csarven.ca/#i>
@@ -28,12 +31,12 @@ CONSTRUCT {
     a void:DatasetDescription ;
     dcterms:title "A VoiD Description of the fao.270a.info Dataset"@en ;
     dcterms:creator <http://csarven.ca/#i> ;
-    foaf:primaryTopic :fao .
+    foaf:primaryTopic fao-dataset:fao .
 
 
 fao-dataset:fao
     a void:Dataset ;
-    dcterms:title "FAO of UN Datasets"@en ;
+    dcterms:title "Food and Agriculture Organization of the United Nations datasets"@en ;
     foaf:homepage <http://fao.270a.info/> ;
     dcterms:source <http://fao.org/> ;
     dcterms:publisher <http://csarven.ca/#i> ;
@@ -63,9 +66,6 @@ fao-dataset:void
     void:dataDump <http://fao.270a.info/void.ttl> ;
     .
 
-fao-dataset:meta
-    void:dataDump <http://fao.270a.info/data/meta.tar.gz> ;
-    .
 
 ?voidDataset
     a sd:Graph ;
@@ -109,26 +109,27 @@ fao-dataset:meta
     sd:graph fao-dataset:void ;
     .
 
-:meta_dbpedia
+:linkset-fao-dbpedia
     a void:Linkset ;
     void:linkPredicate skos:exactMatch ;
-    void:subjectsTarget :meta ;
-    void:objectsTarget :dbpedia ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget <http://dbpedia.org/void/Dataset> ;
     void:triples 673 ;
     .
-:dbpedia
+<http://dbpedia.org/void/Dataset>
     rdf:type void:Dataset ;
+    void:sparqlEndpoint <http://dbpedia.org/sparql> ;
     foaf:homepage <http://dbpedia.org/> ;
     .
-:meta_eunis
+:linkset-fao-eunis
     a void:Linkset ;
     void:linkPredicate skos:exactMatch ;
-    void:subjectsTarget :meta ;
-    void:objectsTarget :dbpedia ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget :eunis ;
     void:triples 359 ;
     .
 :eunis
-    rdf:type void:Dataset ;
+    a void:Dataset ;
     foaf:homepage <http://eunis.eea.europa.eu/> ;
     .
 

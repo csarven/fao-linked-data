@@ -46,6 +46,7 @@ ls -1 "$data"*.rdf | grep -E "DATASTRUCTURE|fao|CL_|FAOSTAT|GENERAL_CONCEPT_SCHE
 
 java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.dbpedia.nt
 java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.eunis.nt
+java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.dataset.titles.nt
 
 ./fao.tdbstats.sh
 #real    23m30.705s
