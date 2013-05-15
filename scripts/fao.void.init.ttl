@@ -40,7 +40,7 @@ fao-dataset:fao
     foaf:homepage <http://fao.270a.info/> ;
     dcterms:source <http://fao.org/> ;
     dcterms:publisher <http://csarven.ca/#i> ;
-    dcterms:modified "2013-02-10"^^xsd:date ;
+    dcterms:modified "2013-05-06"^^xsd:date ;
     dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
     void:subset
         fao-dataset:void ,
@@ -109,12 +109,19 @@ fao-dataset:void
     sd:graph fao-dataset:void ;
     .
 
-:linkset-fao-dbpedia
+:linkset-fao-dbpedia-species
     a void:Linkset ;
     void:linkPredicate skos:exactMatch ;
     void:subjectsTarget fao-dataset:fao ;
     void:objectsTarget <http://dbpedia.org/void/Dataset> ;
     void:triples 673 ;
+    .
+:linkset-fao-dbpedia-country
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget <http://dbpedia.org/void/Dataset> ;
+    void:triples 211 ;
     .
 <http://dbpedia.org/void/Dataset>
     rdf:type void:Dataset ;
@@ -131,6 +138,42 @@ fao-dataset:void
 :eunis
     a void:Dataset ;
     foaf:homepage <http://eunis.eea.europa.eu/> ;
+    .
+:linkset-fao-ecb
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget ecb-dataset:ecb ;
+    void:triples 210 ;
+    .
+ecb-dataset:ecb
+    a void:Dataset ;
+    void:sparqlEndpoint <http://ecb.270a.info/sparql> ;
+    foaf:homepage <http://ecb.270a.info/> ;
+    .
+:linkset-fao-worldbank
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget worldbank-dataset:worldbank ;
+    void:triples 178 ;
+    .
+worldbank-dataset:worldbank
+    a void:Dataset ;
+    void:sparqlEndpoint <http://worldbank.270a.info/sparql> ;
+    foaf:homepage <http://worldbank.270a.info/> ;
+    .
+:linkset-fao-transparency
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget transparency-dataset:transparency ;
+    void:triples 167 ;
+    .
+:transparency
+    a void:Dataset ;
+    void:sparqlEndpoint <http://transparency.270a.info/sparql> ;
+    foaf:homepage <http://transparency.270a.info/> ;
     .
 
 

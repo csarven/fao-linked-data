@@ -17,7 +17,7 @@ DataSetCodes=(AQUACULTURE_QUANTITY AQUACULTURE_US_DOLLAR CAPTURE SEATL_CAPTURE R
 #N-Triples
 for DataSetCode in "${DataSetCodes[@]}" ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/"$DataSetCode" "$data"import/"$DataSetCode".nt ; done
 
-#ls -1 "$data"import/*.nt | grep -E "DATASTRUCTURE|prov|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done
+#ls -1 "$data"import/*.nt | grep -E "DATASTRUCTURE|fao\.|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done
 
 
 #RDF/XML
@@ -41,10 +41,11 @@ for DataSetCode in "${DataSetCodes[@]}" ; do java "$JVM_ARGS" tdb.tdbloader -v -
 
 #for DataSetCode in "${DataSetCodes[@]}" ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/"$DataSetCode" "$data""$DataSetCode".rdf ; done
 
-ls -1 "$data"*.rdf | grep -E "DATASTRUCTURE|fao|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done 
+ls -1 "$data"*.rdf | grep -E "DATASTRUCTURE|\.fao|CL_|FAOSTAT|GENERAL_CONCEPT_SCHEME" | while read i ; do java "$JVM_ARGS" tdb.tdbloader -v --desc="$tdbAssembler" --graph="$namespace"graph/meta "$i" ; done 
 
 
-java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.dbpedia.nt
+java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.dbpedia.species.nt
+java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.dbpedia.country.nt
 java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.eunis.nt
 java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.worldbank.nt
 java "$JVM_ARGS" tdb.tdbloader --desc="$tdbAssembler" --graph="$namespace"graph/meta "$data"fao.exactMatch.transparency.nt
