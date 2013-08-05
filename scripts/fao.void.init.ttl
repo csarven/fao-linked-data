@@ -170,7 +170,7 @@ worldbank-dataset:worldbank
     void:objectsTarget transparency-dataset:transparency ;
     void:triples 167 ;
     .
-:transparency
+transparency-dataset:transparency
     a void:Dataset ;
     void:sparqlEndpoint <http://transparency.270a.info/sparql> ;
     foaf:homepage <http://transparency.270a.info/> ;
