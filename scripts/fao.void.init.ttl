@@ -15,6 +15,7 @@ prefix fao-graph: <http://fao.270a.info/graph/>
 prefix bfs-dataset: <http://bfs.270a.info/dataset/>
 prefix fao-dataset: <http://fao.270a.info/dataset/>
 prefix ecb-dataset: <http://ecb.270a.info/dataset/>
+prefix imf-dataset: <http://imf.270a.info/dataset/>
 prefix worldbank-dataset: <http://worldbank.270a.info/dataset/>
 prefix transparency-dataset: <http://transparency.270a.info/dataset/>
 
@@ -62,7 +63,7 @@ fao-dataset:fao
 fao-dataset:void
     a sd:Graph, void:Dataset ;
     dcterms:title "SD+VoID triples"@en ;
-    void:triples 2039 ;
+    void:triples 2047 ;
     void:dataDump <http://fao.270a.info/void.ttl> ;
     .
 
@@ -89,7 +90,7 @@ fao-dataset:void
     a sd:Dataset ;
     dcterms:title "FAO Linked Data"@en ;
     dcterms:description "FAO Linked Data"@en ;
-    void:triples 52861175 ;
+    void:triples 52861183 ;
 
     sd:defaultGraph :defaultGraph ;
 
@@ -147,6 +148,18 @@ fao-dataset:void
     void:triples 210 ;
     .
 ecb-dataset:ecb
+    a void:Dataset ;
+    void:sparqlEndpoint <http://ecb.270a.info/sparql> ;
+    foaf:homepage <http://ecb.270a.info/> ;
+    .
+:linkset-fao-imf
+    a void:Linkset ;
+    void:linkPredicate skos:exactMatch ;
+    void:subjectsTarget fao-dataset:fao ;
+    void:objectsTarget imf-dataset:imf ;
+    void:triples 23 ;
+    .
+imf-dataset:imf
     a void:Dataset ;
     void:sparqlEndpoint <http://ecb.270a.info/sparql> ;
     foaf:homepage <http://ecb.270a.info/> ;
