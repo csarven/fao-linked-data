@@ -1,6 +1,6 @@
-<http://fao.270a.info/structure/AQUACULTURE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/property/ENVIRONMENT> .
-<http://fao.270a.info/structure/CAPTURE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/property/FAO_MAJOR_AREA> .
-<http://fao.270a.info/structure/REGIONAL_CAPTURE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/property/DIVISION> .
-<http://fao.270a.info/structure/PRODUCTION_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/property/PRODUCTION_SOURCE> .
-<http://fao.270a.info/structure/TRADE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/property/TRADE_FLOW> .
+<http://fao.270a.info/structure/AQUACULTURE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/ENVIRONMENT> .
+<http://fao.270a.info/structure/CAPTURE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/FAO_MAJOR_AREA> .
+<http://fao.270a.info/structure/REGIONAL_CAPTURE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/DIVISION> .
+<http://fao.270a.info/structure/PRODUCTION_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/PRODUCTION_SOURCE> .
+<http://fao.270a.info/structure/TRADE_DATASTRUCTURE> <http://stats.270a.info/vocab#identityDimension> <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/TRADE_FLOW> .
 

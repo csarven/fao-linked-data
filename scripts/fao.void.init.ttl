@@ -12,15 +12,15 @@ prefix prov: <http://www.w3.org/ns/prov#>
 prefix sd: <http://www.w3.org/ns/sparql-service-description#>
 prefix : <http://fao.270a.info/void.ttl#>
 prefix fao-graph: <http://fao.270a.info/graph/>
-@prefix oecd-dataset: <http://oecd.270a.info/dataset/> .
-@prefix bfs-dataset: <http://bfs.270a.info/dataset/> .
-@prefix fao-dataset: <http://fao.270a.info/dataset/> .
-@prefix ecb-dataset: <http://ecb.270a.info/dataset/> .
-@prefix imf-dataset: <http://imf.270a.info/dataset/> .
-@prefix uis-dataset: <http://uis.270a.info/dataset/> .
-@prefix frb-dataset: <http://frb.270a.info/dataset/> .
-@prefix worldbank-dataset: <http://worldbank.270a.info/dataset/> .
-@prefix transparency-dataset: <http://transparency.270a.info/dataset/> .
+prefix oecd-dataset: <http://oecd.270a.info/dataset/>
+prefix bfs-dataset: <http://bfs.270a.info/dataset/>
+prefix fao-dataset: <http://fao.270a.info/dataset/>
+prefix ecb-dataset: <http://ecb.270a.info/dataset/>
+prefix imf-dataset: <http://imf.270a.info/dataset/>
+prefix uis-dataset: <http://uis.270a.info/dataset/>
+prefix frb-dataset: <http://frb.270a.info/dataset/>
+prefix worldbank-dataset: <http://worldbank.270a.info/dataset/>
+prefix transparency-dataset: <http://transparency.270a.info/dataset/>
 
 CONSTRUCT {
 <http://csarven.ca/#i>

@@ -2,7 +2,7 @@
 
 . ./fao.config.sh
 mkdir -p "$data"import
-#rm "$data"import/*.nt ;
+rm "$data"import/*.nt ;
 
 
 DataSetCodes=(AQUACULTURE_QUANTITY AQUACULTURE_US_DOLLAR CAPTURE SEATL_CAPTURE RECOFI_CAPTURE CECAF_CAPTURE GFCM_CAPTURE GLOBAL_PRODUCTION) ;

@@ -55,11 +55,7 @@ sleep 1
                     <dcterms:identifier>'$DataSetCode'</dcterms:identifier>
                 </rdf:Description>
             </prov:used>
-            <prov:generated>
-                <rdf:Description rdf:about="http://fao.270a.info/data/'$DataSetCode'.'$version'.xml">
-                    <dcterms:identifier>'$DataSetCode'</dcterms:identifier>
-                </rdf:Description>
-            </prov:generated>
+            <prov:generated rdf:resource="http://fao.270a.info/data/'$DataSetCode'.'$version'.xml"/>
             <rdfs:label xml:lang="en">Retrieved '$DataSetCode' '$version'</rdfs:label>
             <rdfs:comment xml:lang="en">'$DataSetCode' '$version' retrieved from source and saved to local filesystem.</rdfs:comment>
         </rdf:Description>' >> "$data""$agency".prov.retrieval.rdf ;
@@ -111,12 +107,7 @@ sleep 1
                             <dcterms:identifier>'$DataSetCode'</dcterms:identifier>
                         </rdf:Description>
                     </prov:used>
-                    <prov:generated>
-                        <rdf:Description rdf:about="http://fao.270a.info/data/'$DataSetCode'.'$datestart'.'$dateend'.xml">
-                            <dcterms:identifier>'$DataSetCode'</dcterms:identifier>
-                        </rdf:Description>
-                    </prov:generated>
-
+                    <prov:generated rdf:resource="http://fao.270a.info/data/'$DataSetCode'.'$datestart'.'$dateend'.xml"/>
                     <rdfs:label xml:lang="en">Retrieved '$DataSetCode'</rdfs:label>
                     <rdfs:comment xml:lang="en">'$DataSetCode' retrieved from source and saved to local filesystem.</rdfs:comment>
                 </rdf:Description>' >> "$data""$agency".prov.retrieval.rdf ;
@@ -157,11 +148,7 @@ sleep 1
                     <dcterms:identifier>'$DataSetCode'</dcterms:identifier>
                 </rdf:Description>
             </prov:used>
-            <prov:generated>
-                <rdf:Description rdf:about="http://fao.270a.info/data/'$DataSetCode'.xml">
-                    <dcterms:identifier>'$DataSetCode'</dcterms:identifier>
-                </rdf:Description>
-            </prov:generated>
+            <prov:generated rdf:resource="http://fao.270a.info/data/'$DataSetCode'.xml"/>
             <rdfs:label xml:lang="en">Retrieved '$DataSetCode'</rdfs:label>
             <rdfs:comment xml:lang="en">'$DataSetCode' retrieved from source and saved to local filesystem. Removed duplicate node tree.</rdfs:comment>
         </rdf:Description>' >> "$data""$agency".prov.retrieval.rdf ;

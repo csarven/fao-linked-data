@@ -1,0 +1,202 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix xstats: <http://example.org/XStats#> .
+
+<http://fao.270a.info/dataset/AQUACULTURE_US_DOLLAR>
+    void:classPartition [
+        void:class <http://www.w3.org/ns/prov#Usage> ;
+        void:entities 4
+    ], [
+        void:class <http://www.w3.org/ns/prov#Association> ;
+        void:entities 2
+    ], [
+        void:class <http://www.w3.org/ns/prov#Activity> ;
+        void:entities 6
+    ], [
+        void:class qb:Observation ;
+        void:entities 72072
+    ], [
+        void:class <http://www.w3.org/ns/prov#Agent> ;
+        void:entities 4
+    ], [
+        void:class <http://www.w3.org/ns/prov#Entity> ;
+        void:entities 10
+    ], [
+        void:class qb:DataSet ;
+        void:entities 2
+    ] ;
+    void:classes 7 ;
+    void:entities 72092 ;
+    void:observation [
+        xstats:schema <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+        xstats:subjectsOfType rdf:type ;
+        xstats:value 72150 ;
+        a qb:Observation
+    ], [
+        xstats:schema <http://www.w3.org/2000/01/rdf-schema#> ;
+        xstats:subjectsOfType <http://www.w3.org/2000/01/rdf-schema#label> ;
+        xstats:value 54 ;
+        a qb:Observation
+    ] ;
+    void:properties 29 ;
+    void:propertyPartition [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#startedAtTime> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 2 ;
+        void:property qb:structure ;
+        void:triples 2
+    ], [
+        void:distinctObjects 1038 ;
+        void:distinctSubjects 72072 ;
+        void:property <http://fao.270a.info/dimension/1.0/CS_FISHSTAT/SPECIES> ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 4 ;
+        void:property <http://www.w3.org/ns/prov#atTime> ;
+        void:triples 12
+    ], [
+        void:distinctObjects 384 ;
+        void:distinctSubjects 72072 ;
+        void:property <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/UN_COUNTRY> ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 2 ;
+        void:property <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 2 ;
+        void:property <http://www.w3.org/ns/prov#wasDerivedFrom> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 2 ;
+        void:property <http://purl.org/dc/terms/issued> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 8 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#used> ;
+        void:triples 12
+    ], [
+        void:distinctObjects 14 ;
+        void:distinctSubjects 72098 ;
+        void:property rdf:type ;
+        void:triples 36740
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#wasStartedBy> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 2 ;
+        void:property <http://www.w3.org/ns/prov#agent> ;
+        void:triples 2
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#generated> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#qualifiedAssociation> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 4 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#qualifiedUsage> ;
+        void:triples 12
+    ], [
+        void:distinctObjects 24734 ;
+        void:distinctSubjects 72072 ;
+        void:property <http://fao.270a.info/measure/0.1/GENERAL_CONCEPT_SCHEME/OBS_VALUE> ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 2 ;
+        void:property <http://www.w3.org/ns/prov#hadRole> ;
+        void:triples 2
+    ], [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 72072 ;
+        void:property <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/ENVIRONMENT> ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 2 ;
+        void:property <http://www.w3.org/ns/prov#wasAttributedTo> ;
+        void:triples 2
+    ], [
+        void:distinctObjects 10 ;
+        void:distinctSubjects 14 ;
+        void:property <http://www.w3.org/2000/01/rdf-schema#label> ;
+        void:triples 14
+    ], [
+        void:distinctObjects 44 ;
+        void:distinctSubjects 72072 ;
+        void:property <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/FAO_MAJOR_AREA> ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 6 ;
+        void:property <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 8 ;
+        void:distinctSubjects 4 ;
+        void:property <http://www.w3.org/ns/prov#entity> ;
+        void:triples 8
+    ], [
+        void:distinctObjects 6 ;
+        void:distinctSubjects 2 ;
+        void:property <http://www.w3.org/ns/prov#generatedAtTime> ;
+        void:triples 6
+    ], [
+        void:distinctObjects 26 ;
+        void:distinctSubjects 72072 ;
+        void:property <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/TIME> ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 2 ;
+        void:property <http://purl.org/dc/terms/identifier> ;
+        void:triples 2
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 72072 ;
+        void:property qb:dataSet ;
+        void:triples 72072
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 2 ;
+        void:property <http://purl.org/dc/terms/license> ;
+        void:triples 2
+    ], [
+        void:distinctObjects 2 ;
+        void:distinctSubjects 4 ;
+        void:property <http://purl.org/dc/terms/creator> ;
+        void:triples 4
+    ] ;
+    void:triples 576876 ;
+    void:vocabulary <http://fao.270a.info/dimension/0.1/GENERAL_CONCEPT_SCHEME/>, <http://fao.270a.info/dimension/1.0/CS_FISHSTAT/>, <http://fao.270a.info/measure/0.1/GENERAL_CONCEPT_SCHEME/>, <http://purl.org/dc/terms/>, <http://purl.org/linked-data/cube>, <http://www.w3.org/1999/02/22-rdf-syntax-ns>, <http://www.w3.org/2000/01/rdf-schema>, <http://www.w3.org/ns/prov> ;
+    a void:Dataset .
+
+xstats:schema
+    a qb:AttributeProperty .
+
+xstats:subjectsOfType
+    a qb:DimensonProperty .
+
+xstats:value
+    a qb:MeasureProperty .
+
+
